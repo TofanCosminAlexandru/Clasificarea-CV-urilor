@@ -1,0 +1,5 @@
+Apache POI WORD 
+- permite crearea, modificarea si extragerea datelor din documente MS-Office
+folosind aplicatii java.
+
+(Chirila Andrei-Liviu, 	Corduneanu Florian-Mihai)

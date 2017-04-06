@@ -1,0 +1,9 @@
+Apache PdfBOX  este un tool (mai exact o librarie) open source pentru a lucra in java cu documentele pdf. Acest tool permite crearea de noi documente pdf, manipularea documentelor existente sau alte actiuni precum:
+- extragerea textului; 
+- extragerea sau completarea anumitor campuri(fill forms) din CV (email, numar de telefon);
+- semnatura digitala;
+- impartirea informatiilor dintr-un pdf in doua sau mai multe pdf-uri;
+- imbinarea unor pdf-uri;
+- printarea.
+
+(Ababei Bianca-Georgiana, Balan Sabin-Marian, Leleu Alexandru-Ioan)
