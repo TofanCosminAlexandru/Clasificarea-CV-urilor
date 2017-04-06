@@ -1,0 +1,52 @@
+informatii personale
+permis
+nume
+informatii
+calitati pesoanale
+limbaje de programare
+tehnici de programare
+varsta
+
+
+tipuri: persoanalizabile ( cronologic- istoric,detalii interese principal istoric
+ultimul joc pana la primul job avut
+-cv fuctinal opus celui cronologic se axeaza pe abilitati si limbaje , voluntariat...
+- cv combinat imbina cele de sus, skill and experiencess) 
+
+continut : - categoria work experience experinta recenta mai putin timp, experianta practica vs experienta teoretic(e mai ok), 
+tipuri de cv-uri anii de experienta, interpretarea informatiilor dintrun cv pentru a putea face comparatii
+- cv cu plata ejob 
+				myjob
+- cv free ejobs 250k free cv cu request
+	best jobs multe cvuri peste 1 mil
+indeed. ro mocaciuni 
+cvlibrari.co.uk email de companie nr valid de anglia pentru a accesa db de cv-uri
+
+-MICROSERVICII pentru aplicatii mari complexe entreprise intregram mai multe functionalitatu
+-un developer poate intelege mai usor functionalitatile aplicatiei, elemente atomice vor fi in afara 
+aplicatiei, iar cand avem nevoie de acel serviciu doar apelez acea functiei
+- daca modificam codul de le microservicii nu afecteaza restul aplicatiei
+-daca apar probleme la ele nu afecteaza restul aplicatiti
+
+contra
+-necestia memorie, are bd propriu ,
+- partea de testare unitesting
+teste separate ptr fiecare serviciu, e greu de test o combinare a acestui seviciu
+-greu de a crea usecase-uri 
+
+clusterizare
+- proces prin care putem sa grupeze date
+- alg ierarhici pentru a clasifica documentele
+- tokenizare in care se parseaza textul 
+- grupam copiile pentru a nu repeta cuvintele ex sinonimele 
+- filtram puctuatiile si cuvintele de legatura a , an
+- clusterizare propriuzisa ierarhici (complexitate exponentiala, ineficienti) camings (ofera mai putine informatii dar informatie necesara)
+- verificare
+
+Clasificare
+- competentii tehnice
+-soft skils
+-carnet de conducere
+experienta
+
+- mai multe layere de cluserizare
