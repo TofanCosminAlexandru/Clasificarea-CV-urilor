@@ -1,0 +1,6 @@
+- CV-urile in format .xls pot avea un continut ordonat 
+- pentru procesarea informatiilor din fisierele cu format .xls este necesar 
+utilizarea toolkit-ului Apache Tika, utiliand libraria Apache POI.
+- acest toolkit este oferit gratuit de catre Apache
+
+(Tofan Cosmin- Alexandru, Alexandru Gabriel)
