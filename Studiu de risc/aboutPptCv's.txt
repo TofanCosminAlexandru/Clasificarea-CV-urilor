@@ -1,0 +1,8 @@
+- cv-urle in format ppt iti dau oportunitatea de a fi creativ intrucat poti reda informatiile personale prin 
+combinare cu imagini, dupa un design propriu
+- slide-urile sunt legate intre ele, cu putine informatii, dar cuprinzatoare, eventual redate prin imagini
+- iti da posibilitatea de a crea ceva interesant care sa atraga atentia, ceea ce iti ofera un avantaj in competitia
+cu celelalte cv-uri; se observa ca intr-un astfel de cv a fost pusa multa munca
+- pentru extragerea datelor dintr-un fisier .ppt se poate folosi unul dintre utilitarele Apache POI-HSLF sau POI-XLSF
+
+(Mihalachi Bogdan-Marian)
