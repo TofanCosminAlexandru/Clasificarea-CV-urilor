@@ -1,0 +1,17 @@
+Membrii echipei 1 responsabila cu Modulul 3:
+
+•	Ababei Georgiana-Bianca, An 1, Grupa A1, Identificarea actorilor + Descrierea problemei
+
+•	Alexandru Gabriel, An 1, Grupa A1, Identificarea actorilor + Descrierea problemei
+
+•	Bălan Sabin-Marian, An 1, Grupa A1, Identificarea scenariilor de utilizare + Descrierea scenariilor de utilizare
+
+•	Chirilă Andrei-Liviu,  An 1, Grupa A1, Diagrama use-case
+
+•	Corduneanu Florian-Mihai , An 1, Grupa A1, Identificarea scenariilor de utilizare + Descrierea scenariilor de utilizare
+
+•	Leleu Alexandru-Ioan, An 1, Grupa A1, Diagrama de clase
+
+•	Mihalachi Bogdan-Marian, An 1, Grupa A1, Diagrama de clase
+
+•	Tofan Cosmin-Alexandru, An 1, Grupa A1, Scrum Master + Diagrama use-case
