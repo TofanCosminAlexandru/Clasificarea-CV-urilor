@@ -9,7 +9,7 @@ import daoOracle.CvController;
 
 /**
  *
- * @author Mihalachi Bogdan-Marian, Balan Sabin-Marian, Ababei Bianca-Georgiana,
+ * @author Mihalachi Bogdan-Marian, Balan Sabin-Marian, Ababei Bianca-Georgiana, IOJA Ş. PETRU-ALEXANDRU
  * anul 2, grupa A1
  */
 public class CvClassification {
