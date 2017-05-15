@@ -1,79 +1,194 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cvclassification;
 
+import daoOracle.CvController;
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
- * @author USER
+ * @author Chirila Andrei Liviu, Corduneanu Florian Mihai anul 2, grupa A1,
+ * modulul 3
  */
 public class CenterOfGravity {
-      private Cv cv1;
-      private Cv cv2;
-      private Classifier classify;
-      public String findCenterOfGravity(int ClusterID) {
-       String URL = "jdbc:oracle:thin:@localhost:1521:xe";
-        String USER = "student";
-        String PASS = "STUDENT";
+
+    private CvController cvController = new CvController();
+    private Classifier classifier = new Classifier();
+
+    /**
+     * 
+     * @param cvID
+     * @return true daca update-ul se efectueaza cu succes,
+     * false altfel
+     */
+    public boolean modifyCvClusterId(int cvID) {
+        
+        Connection conn = null;
+        int clusterID;
+
+        try {
+            conn = Database.getConnection();
+            clusterID = this.findTheMostSuitableCluster(cvID);
+            PreparedStatement pstmt = conn.prepareStatement("update curriculumvitae set cluster_id=? where id=?");
+            pstmt.setInt(1, clusterID);
+            pstmt.setInt(2, cvID);
+            pstmt.executeUpdate();
+            Database.commit();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    /**
+     * 
+     * @return true daca update-ul se efectueaza cu succes,
+     * false altfel
+     */
+    public boolean insertCentersOfGravityIntoDatabase() {
+
+        Connection conn = null;
+        HashMap<Integer, Integer> centersOfGravity = null;
+
+        try {
+            conn = Database.getConnection();
+            centersOfGravity = this.findAllCentersOfGravity();
+            for (Map.Entry m : centersOfGravity.entrySet()) {
+                PreparedStatement pstmt = conn.prepareStatement("insert into clusters (cluster_id,gravity_center_id) values (?,?)");
+                pstmt.setInt(1, (int) m.getKey());
+                pstmt.setInt(2, (int) m.getValue());
+                pstmt.executeUpdate();
+            }
+            Database.commit();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    /**
+     *
+     * @param cvID
+     * @return id-ul clusterului de care apartine cv-ul sau -1 in caz de eroare
+     */
+    public int findTheMostSuitableCluster(int cvID) {
+        HashMap<Integer, Integer> centersOfGravity = this.findAllCentersOfGravity();
+        double minDistance = 999, distance;
+        int clusterID = -1;
+        Cv cv1, cv2;
+        cv1 = cvController.getByID(cvID);
+        for (Map.Entry m : centersOfGravity.entrySet()) {
+            cv2 = cvController.getByID((int) m.getValue());
+            distance = classifier.getSqrtDistance(classifier.getValuesForComputingGeneralDistance(cv1, cv2));
+            if (distance < minDistance) {
+                minDistance = distance;
+                clusterID = (int) m.getKey();
+            }
+        }
+        return clusterID;
+    }
+
+    /**
+     *
+     * @return Hashmap <cheie,valoare> unde cheia reprezinta id-ul unui cluster
+     * iar valoarea reprezinta id-ul cv-ului care este centrul de greutate
+     * pentru clusterul respectiv
+     *
+     */
+    public HashMap<Integer, Integer> findAllCentersOfGravity() {
 
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-        ResultSet rs2 = null;
         String sql;
-        int min = 9999;
-        int distance = 0;
-        String name = null;
-        String compare = null;
-        String wantedName = null;
+
+        int clusterID;
+        HashMap<Integer, Integer> centersOfGravity = null;
 
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Driver-ul nu a putut fi inregistrat");
-            System.exit(0);
-        }
-
-        try {
-            conn = DriverManager.getConnection(URL, USER, PASS);
+            conn = Database.getConnection();
 
             stmt = conn.createStatement();
 
-            sql = "Select * from database where ClusterId = " + ClusterID;
+            sql = "Select distinct cluster_id from curriculumvitae";
 
             rs = stmt.executeQuery(sql);
-            rs2 = stmt.executeQuery(sql);
-            
-           
+
+            centersOfGravity = new HashMap<Integer, Integer>();
+
             while (rs.next()) {
-                name = rs.getString(1);
-                distance = 0;
-                while(rs2.next()){
-                    compare = rs2.getString(1);
-                    if(compare!=name)
-                        distance = (int) (distance + classify.distance(cv1,cv2));
-                    }
-                if(min>distance){
-                       min = distance;
-                       wantedName = name;
-                }
+                clusterID = rs.getInt(1);
+                centersOfGravity.put(clusterID, this.findCenterOfGravity(clusterID));
             }
 
             rs.close();
             stmt.close();
-            conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return name;
+
+        return centersOfGravity;
+    }
+
+    /**
+     * @param ClusterID
+     * @return Id-ul cv-ului care reprezinta centrul de greutate al clusterului
+     * respectiv, sau -1 in caz de eroare
+     */
+    public int findCenterOfGravity(int ClusterID) {
+        Connection conn = null;
+        Statement stmt = null, stmt2 = null;
+        ResultSet rs = null;
+        ResultSet rs2 = null;
+        String sql;
+        double min = 9999;
+        double distance = 0;
+        double sqrtDistance;
+        int cvID1, cvID2;
+        int CenterOfGravityID = -1;
+        Cv cv1, cv2;
+
+        try {
+            conn = Database.getConnection();
+
+            stmt = conn.createStatement();
+
+            sql = "Select id from curriculumvitae where cluster_id = " + ClusterID;
+
+            rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                cvID1 = rs.getInt(1);
+                cv1 = cvController.getByID(cvID1);
+                distance = 0;
+                stmt2 = conn.createStatement();
+                rs2 = stmt2.executeQuery(sql);
+                while (rs2.next()) {
+                    cvID2 = rs2.getInt(1);
+                    cv2 = cvController.getByID(cvID2);
+                    if (cvID1 != cvID2) {
+                        sqrtDistance = classifier.getSqrtDistance(classifier.getValuesForComputingGeneralDistance(cv1, cv2));
+                        distance = distance + sqrtDistance;
+                    }
+                }
+                stmt2.close();
+                rs2.close();
+                if (min > distance) {
+                    min = distance;
+                    CenterOfGravityID = cvID1;
+                }
+            }
+            rs.close();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    
+        return CenterOfGravityID;
+    }
 }
