@@ -1,0 +1,330 @@
+Studiu de caz pe metrici
+
+Input: doua cv-uri din baza de date
+Output: datele corespunzatoare cv-urilor + distanta euclidiana dintre cele doua cv-uri atunci cand se tine cont de anumite
+	criterii de departajare
+
+
+CV1
+ID: 1
+Nume: null
+Data nastere: null
+Varsta: 20
+Adresa: null
+Numar de telefon: null
+Email: null
+Job ideal: null
+Ani experienta totala: 6
+Experienta pe domenii: 
+	Software Tester --> 2 ani 
+	Software Developer --> 3 ani 
+	Software Engineer --> 1 ani 
+Studii: 
+	Liceu: 4 ani
+	Licenta: 4 ani
+	Master: 2 ani
+Limbi straine: 
+	Engleza
+	Franceza
+Hobby-uri: 
+	
+Soft skills: 
+	C++
+	Java
+	C#
+	Python
+
+CV2
+ID: 2
+Nume: null
+Data nastere: null
+Varsta: 24
+Adresa: null
+Numar de telefon: null
+Email: null
+Job ideal: null
+Ani experienta totala: 7
+Experienta pe domenii: 
+	Software Tester --> 1 ani 
+	Software Developer --> 4 ani 
+	Database Administrator --> 2 ani 
+Studii: 
+	Liceu: 4 ani
+	Licenta: 4 ani
+	Master: 3 ani
+Limbi straine: 
+	Engleza
+	Germana
+Hobby-uri: 
+	
+Soft skills: 
+	C++
+	Java
+	SQL
+	ASM
+
+CV3
+ID: 3
+Nume: null
+Data nastere: null
+Varsta: 22
+Adresa: null
+Numar de telefon: null
+Email: null
+Job ideal: null
+Ani experienta totala: 4
+Experienta pe domenii: 
+	Software Tester --> 1 ani 
+	Software Developer --> 1 ani 
+	Software Engineer --> 1 ani 
+	Database Administrator --> 1 ani 
+Studii: 
+	Liceu: 4 ani
+	Licenta: 4 ani
+	Master: 3 ani
+	Doctorat: 1 ani
+Limbi straine: 
+	Engleza
+Hobby-uri: 
+	
+Soft skills: 
+	Java
+	SQL
+	C#
+
+CV4
+ID: 4
+Nume: null
+Data nastere: null
+Varsta: 32
+Adresa: null
+Numar de telefon: null
+Email: null
+Job ideal: null
+Ani experienta totala: 7
+Experienta pe domenii: 
+	Web Developer --> 5 ani 
+	Database Administrator --> 2 ani 
+Studii: 
+	Liceu: 4 ani
+	Licenta: 4 ani
+	Master: 1 ani
+Limbi straine: 
+	Franceza
+Hobby-uri: 
+	
+Soft skills: 
+	PHP
+	JavaScript
+
+CV5
+ID: 5
+Nume: null
+Data nastere: null
+Varsta: 26
+Adresa: null
+Numar de telefon: null
+Email: null
+Job ideal: null
+Ani experienta totala: 7
+Experienta pe domenii: 
+	Software Developer --> 4 ani 
+	Web Developer --> 2 ani 
+	Scrum Master --> 1 ani 
+Studii: 
+	Liceu: 4 ani
+	Licenta: 4 ani
+	Master: 3 ani
+	Doctorat: 2 ani
+Limbi straine: 
+	Germana
+	Franceza
+Hobby-uri: 
+	
+Soft skills: 
+	C++
+	Java
+	PHP
+	JavaScript
+	HTML
+
+CV6
+ID: 6
+Nume: null
+Data nastere: null
+Varsta: 27
+Adresa: null
+Numar de telefon: null
+Email: null
+Job ideal: null
+Ani experienta totala: 7
+Experienta pe domenii: 
+	Software Developer --> 7 ani 
+Studii: 
+	Liceu: 4 ani
+	Licenta: 4 ani
+Limbi straine: 
+	Engleza
+	Germana
+Hobby-uri: 
+	
+Soft skills: 
+	C++
+	CSS
+
+CV7
+ID: 7
+Nume: null
+Data nastere: null
+Varsta: 35
+Adresa: null
+Numar de telefon: null
+Email: null
+Job ideal: null
+Ani experienta totala: 7
+Experienta pe domenii: 
+	Software Tester --> 4 ani 
+	Software Developer --> 1 ani 
+	DatabaseAdministrator --> 2 ani 
+Studii: 
+	Liceu: 4 ani
+	Licenta: 4 ani
+	Master: 1 ani
+Limbi straine: 
+	Engleza
+	Franceza
+	Germana
+Hobby-uri: 
+	
+Soft skills: 
+	Java
+	HTML
+
+CV8
+ID: 8
+Nume: null
+Data nastere: null
+Varsta: 25
+Adresa: null
+Numar de telefon: null
+Email: null
+Job ideal: null
+Ani experienta totala: 8
+Experienta pe domenii: 
+	Software Engineer --> 5 ani 
+	Database Administrator --> 3 ani 
+Studii: 
+	Liceu: 4 ani
+	Licenta: 3 ani
+Limbi straine: 
+	Germana
+Hobby-uri: 
+	
+Soft skills: 
+	C#
+	SQL
+	Java
+
+CV9
+ID: 9
+Nume: null
+Data nastere: null
+Varsta: 30
+Adresa: null
+Numar de telefon: null
+Email: null
+Job ideal: null
+Ani experienta totala: 5
+Experienta pe domenii: 
+	Software Tester --> 1 ani 
+	Software Developer --> 1 ani 
+	Web Developer --> 1 ani 
+	Software Engineer --> 1 ani 
+	Database Administrator --> 1 ani 
+Studii: 
+	Liceu: 4 ani
+	Licenta: 4 ani
+	Master: 3 ani
+	Doctorat: 1 ani
+Limbi straine: 
+	Engleza
+	Franceza
+	Germana
+Hobby-uri: 
+	
+Soft skills: 
+	C++
+	Java
+	C#
+	Python
+	PHP
+	HTML
+
+CV10
+ID: 10
+Nume: null
+Data nastere: null
+Varsta: 20
+Adresa: null
+Numar de telefon: null
+Email: null
+Job ideal: null
+Ani experienta totala: 6
+Experienta pe domenii: 
+	Scrum Master --> 5 ani 
+	Software Engineer --> 4 ani 
+Studii: 
+	Liceu: 4 ani
+	Licenta: 3 ani
+Limbi straine: 
+	Franceza
+	Germana
+Hobby-uri: 
+	
+Soft skills: 
+	JavaScript
+	Python
+
+
+1. Input: CV1 si CV4
+Output: 
+Distanta generala dintre cele doua cv-uri este: 0.1502874173144866
+Distanta dintre cele doua cv-uri, tinand cont ca se cauta persoane cu varsta intre 18 si 25 ani este: 0.27035413499354716
+
+2. Input: CV3 si CV8
+Output: 
+Distanta generala dintre cele doua cv-uri este: 0.09407370652288115
+Distanta dintre cele doua cv-uri, tinand cont ca se cauta persoane cu o experienta totala de 5 ani: 0.21849199332662528
+
+3. Input: CV7 si CV9
+Output: 
+Distanta generala dintre cele doua cv-uri este: 0.265691622959418
+Distanta dintre cele doua cv-uri, tinand cont ca se cauta persoane care au cel putin 2 ani de master: 0.41675056122380555
+
+4. Input: CV3 si CV5
+Output: 
+Distanta generala dintre cele doua cv-uri este: 0.13955726333587506
+Distanta dintre cele doua cv-uri, tinand cont ca se cauta persoane cunoscatoare de limba engleza: 0.390108399144561
+
+5. Input: CV10 si CV2
+Output: 
+Distanta generala dintre cele doua cv-uri este: 0.1340262165845404
+Distanta dintre cele doua cv-uri, tinand cont ca se cauta persoane cunoscatoare de C++ si Java: 0.4523601368363848
+
+6. Input: CV5 si CV7
+Output: 
+Distanta generala dintre cele doua cv-uri este: 0.10941339586529632
+Distanta dintre cele doua cv-uri, tinand cont ca se cauta persoane care au lucrat cel putin 3 ani ca Software Developer, cel putin
+2 ani ca Software Tester si cel putin 1 an ca Database Administrator: 0.14610370014060575
+
+7. Input: CV6 si CV9
+Output: 
+Distanta generala dintre cele doua cv-uri este: 0.11006638218212844
+Distanta dintre cele doua cv-uri, tinand cont ca se cauta persoane cunoscatoare de Franceza, CSS, care sa fi lucrat 3 ani ca Software Developer, 1 an
+ca Software Tester si 1 an ca Database Administrator si care sa aiba varsta intre 25 si 28 de ani: 0.4250165379399666
+
+8. Input: CV8 si CV9
+Output: 
+Distanta generala dintre cele doua cv-uri este: 0.12628812873764142
+Distanta dintre cele doua cv-uri, tinand cont ca se cauta persoane cu experienta totala de cel putin 6 ani si care sa aiba cel putin un
+an de doctorat: 0.2757993646468681
